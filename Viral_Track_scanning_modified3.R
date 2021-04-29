@@ -281,7 +281,7 @@ for (k in List_output_path) {
   ##Let's filter this table : removing host/human sequences and viruses with less than a given threshold of reads
   
   Chromosome_to_remove = c("X","Y","MT",as.character(1:23))
-  Chromosome_to_remove = c("chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16","chr17","chr18","chr19","chr2","chr20","chr21","chr22","chr3","chr4","chr5","chr6","chr7","chr8","chr9","chrMT","chrX","chrY",
+  Chromosome_to_remove = c("chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16","chr17","chr18","chr19","chr2","chr20","chr21","chr22","chr3","chr4","chr5","chr6","chr7","chr8","chr9","chrMT","chrY",
                           "KI270728.1","KI270727.1","KI270442.1","KI270729.1","GL000225.1","KI270743.1","GL000008.2","GL000009.2",
                           "KI270747.1","KI270722.1","GL000194.1","KI270742.1","GL000205.2","GL000195.1","KI270736.1","KI270733.1",
                           "GL000224.1","GL000219.1","KI270719.1","GL000216.2","KI270712.1","KI270706.1","KI270725.1","KI270744.1",

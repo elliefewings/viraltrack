@@ -65,12 +65,18 @@ if [ $# -lt 4 ]; then
   echo "Not enough arguments"
   helpFunction
   abort
+else
+  f1=$(realpath "${f1}")
+  f2=$(realpath "${f2}")
+  params=$(realpath "${params}")
+  barcodes=$(realpath "${barcodes}")
 fi
 
 # Create directory for log and output
 if [[ -z ${output} ]]; then
     outdir="${HOME}/viraltrack_output_$(date +%Y%m%d)"
 else
+    output=$(realpath "${output}")
     outdir="${output}/viraltrack_output_$(date +%Y%m%d)"
 fi
 

@@ -4,8 +4,8 @@
 #SBATCH --job-name=viraltrack
 # Resources, ... and one node with 4 processors:
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --mem=64000
+#SBATCH --ntasks-per-node=8
+#SBATCH --mem=200000
 #SBATCH --time=12:00:00
 #SBATCH --mail-user=eleanor.fewings@bioquant.uni-heidelberg.de
 
@@ -34,8 +34,9 @@ r3="${base}/Viral_Track_cell_demultiplexing.R"
 ## Extract from whitelist ##
 ############################
 
-# Create whitelist
-gunzip -c ${barcodes} | sed 's/-1//g' > "${outdir}/whitelist.tsv"
+# Create whitelist >
+gunzip -c ${barcodes} > "${outdir}/whitelist.tsv"
+sed 's/-1//g' -i "${outdir}/whitelist.tsv"
 
 # Set new fastq names
 f1out=$(basename $(echo ${f1} | sed 's+.fastq.gz+.extracted.fastq.gz+'))
